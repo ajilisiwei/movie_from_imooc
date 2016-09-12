@@ -3,6 +3,7 @@ var User = require('../app/controllers/user')
 var Movie = require('../app/controllers/movie')
 var Comment = require('../app/controllers/comment')
 var Category = require('../app/controllers/category')
+var Book=require('../app/controllers/book')
 
 module.exports = function(app) {
 
@@ -44,4 +45,10 @@ module.exports = function(app) {
 
   // results
   app.get('/results', Index.search)
+
+  //Book
+  app.get('/admin/book/new',Book.new);
+  app.post('/admin/book',Book.save);
+  app.get('/admin/book/list',Book.list);
+  app.delete('/admin/book/list',Book.del);
 }

@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+    .container
+        .row
+            form.form-horizontal(method='post',action='/admin/book')
+                .form-group
+                    label.col-sm-2.control-label(for='inputBookName') 书名
+                    .col-sm-10
+                        input#inputBookName.form-control(type='text',placeholder='请输入书籍名称',name="book[name]",value=book.name)
+                .form-group
+                    label.col-sm-2.control-label(for='inputBookSummary') 简介
+                    .col-sm-10
+                        input#inputBookSummary.form-control(type='text',placeholder='请输入书籍简介',name="book[summary]",value=book.summary)
+                .col-sm-10.col-sm-offset-2
+                    button.btn.btn-primary(type='summit') 录入
